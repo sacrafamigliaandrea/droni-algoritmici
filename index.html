@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!-- saved from url=(0063)file:///Users/sacrafamigliamac/Downloads/droni-algoritmici.html -->
-<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="it">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Droni — Spettacolo sulla timeline</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="./index_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --water:#5460e6; --water-bright:#7b86ff; --water-deep:#0b1030;
@@ -199,26 +199,26 @@ header{
 <header>
   <div class="brand">
     <svg width="30" height="30" viewBox="0 0 30 30">
-      <g fill="#7b86ff"><circle cx="15" cy="6" r="2.4"></circle><circle cx="6.5" cy="14" r="2.4"></circle><circle cx="23.5" cy="14" r="2.4"></circle><circle cx="10.5" cy="23" r="2.4"></circle><circle cx="19.5" cy="23" r="2.4"></circle></g>
-      <g stroke="rgba(123,134,255,.4)" stroke-width="1"><path d="M15 6L6.5 14M15 6l8.5 8M6.5 14l4 9M23.5 14l-4 9M10.5 23h9"></path></g>
+      <g fill="#7b86ff"><circle cx="15" cy="6" r="2.4"/><circle cx="6.5" cy="14" r="2.4"/><circle cx="23.5" cy="14" r="2.4"/><circle cx="10.5" cy="23" r="2.4"/><circle cx="19.5" cy="23" r="2.4"/></g>
+      <g stroke="rgba(123,134,255,.4)" stroke-width="1"><path d="M15 6L6.5 14M15 6l8.5 8M6.5 14l4 9M23.5 14l-4 9M10.5 23h9"/></g>
     </svg>
     <div class="brand-txt"><b>Droni Algoritmici</b><span>Componi lo spettacolo sulla linea del tempo</span></div>
   </div>
   <div class="spacer"></div>
   <div class="transport">
-    <button class="tbtn play" id="btnPlay"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z" fill="currentColor"></path></svg><span class="lbl">Esegui</span></button>
-    <button class="tbtn" id="btnStep"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M2 1l6 5-6 5z" fill="currentColor"></path><rect x="9" y="1" width="2" height="10" fill="currentColor"></rect></svg><span class="lbl">Passo</span></button>
-    <button class="tbtn" id="btnStop" disabled=""><svg width="12" height="12" viewBox="0 0 12 12"><rect x="1" y="1" width="10" height="10" rx="1.5" fill="currentColor"></rect></svg><span class="lbl">Stop</span></button>
-    <button class="tbtn" id="btnReset"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1a5.5 5.5 0 1 0 5 3.2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"></path><path d="M11 1.2v3.2H7.8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="lbl">Azzera</span></button>
+    <button class="tbtn play" id="btnPlay"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg><span class="lbl">Esegui</span></button>
+    <button class="tbtn" id="btnStep"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M2 1l6 5-6 5z" fill="currentColor"/><rect x="9" y="1" width="2" height="10" fill="currentColor"/></svg><span class="lbl">Passo</span></button>
+    <button class="tbtn" id="btnStop" disabled><svg width="12" height="12" viewBox="0 0 12 12"><rect x="1" y="1" width="10" height="10" rx="1.5" fill="currentColor"/></svg><span class="lbl">Stop</span></button>
+    <button class="tbtn" id="btnReset"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1a5.5 5.5 0 1 0 5 3.2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M11 1.2v3.2H7.8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Azzera</span></button>
   </div>
   <div class="speed"><span>Velocità</span><input type="range" id="speed" min="0.4" max="3" step="0.1" value="1"><span id="speedVal" style="font-family:var(--mono);min-width:30px">1.0×</span></div>
-  <button class="hbtn" id="btnHelp" title="Cos&#39;è uno spettacolo di droni?"><svg width="15" height="15" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"></circle><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><circle cx="7" cy="4.3" r=".9" fill="currentColor"></circle></svg></button>
+  <button class="hbtn" id="btnHelp" title="Cos'è uno spettacolo di droni?"><svg width="15" height="15" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="7" cy="4.3" r=".9" fill="currentColor"/></svg></button>
 </header>
 
 <div class="layout">
   <!-- ===== CIELO ===== -->
   <section class="col-stage">
-    <canvas id="stage" width="3004" height="1058"></canvas>
+    <canvas id="stage"></canvas>
     <div class="stage-hud">
       <div class="hud-card">
         <div class="lab">Stato sciame</div>
@@ -234,7 +234,7 @@ header{
     </div>
     <div class="stage-foot">
       <button class="didattica-toggle" id="btnHelp2">
-        <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"></circle><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><circle cx="7" cy="4.3" r=".9" fill="currentColor"></circle></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="7" cy="4.3" r=".9" fill="currentColor"/></svg>
         Com'è fatto lo spettacolo?
       </button>
     </div>
@@ -244,18 +244,18 @@ header{
   <div class="console">
     <div class="toolbar">
       <h2>Linea del tempo</h2>
-      <button class="btn-add" id="btnAdd"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>Aggiungi punto</button>
+      <button class="btn-add" id="btnAdd"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Aggiungi punto</button>
       <div class="tool-sep"></div>
       <span class="tool-label">Esempi</span>
       <button class="ex-btn" data-ex="Saluto">Saluto</button>
       <button class="ex-btn" data-ex="Forme">Forme in sequenza</button>
       <button class="ex-btn" data-ex="Finale">Gran finale</button>
-      <span class="dur-total">Durata totale: <b id="durTotal">8.5s</b></span>
+      <span class="dur-total">Durata totale: <b id="durTotal">0s</b></span>
       <button class="btn-clear" id="btnClearAll">Svuota</button>
     </div>
     <div class="track-wrap" id="trackWrap">
-      <div class="track" id="track" style="width: 1470px;"><div class="axis"></div><div class="seg-dur" style="left: 102.5px;">2.5s</div><div class="seg-dur" style="left: 233px;">2s</div><div class="seg-dur" style="left: 363.5px;">2.5s</div><div class="seg-dur" style="left: 479.5px;">1.5s</div><div class="ev" style="left: 30px;"><div class="ev-dot" style="background:linear-gradient(135deg,#1a2150,#5460e6);color:#fff">0</div><div class="ev-label">decollo</div></div><div class="ev" style="left: 175px;"><div class="ev-dot" style="background:#54b0ff;color:#1c2030">1</div><div class="ev-label">cerchio<br><b>30</b> droni <svg width="9" height="9" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M3 5h2L8 3v7L5 8H3z" fill="#123E90"></path></svg></div></div><div class="ev" style="left: 291px;"><div class="ev-dot" style="background:#ff7ec4;color:#1c2030">2</div><div class="ev-label">cuore<br><b>40</b> droni <svg width="9" height="9" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M3 5h2L8 3v7L5 8H3z" fill="#123E90"></path></svg> <svg width="9" height="9" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M7 1L2 7h3l-1 4 5-6H6z" fill="#f0a830"></path></svg>2</div></div><div class="ev" style="left: 436px;"><div class="ev-dot" style="background:#eaf2ff;color:#1c2030">3</div><div class="ev-label">sciame<br><b>20</b> droni</div></div><button class="kf-add" id="kfAdd" title="Aggiungi una posizione" style="left: 523px;"><svg width="13" height="13" viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path></svg></button><div class="playhead" id="playhead" style="transition: none; left: 30px;"></div></div>
-      
+      <div class="track" id="track"></div>
+      <div class="playhead" id="playhead"></div>
     </div>
   </div>
 </div>
@@ -274,24 +274,24 @@ header{
   <div class="popup" role="dialog" aria-modal="true">
     <div class="popup-head">
       <b id="popTitle">Punto</b>
-      <button class="px" id="popClose"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></button>
+      <button class="px" id="popClose"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
     </div>
     <div class="popup-body">
       <div class="tk-note" id="takeoffNote" style="display:none">
         <b>Evento 0 — Decollo.</b> I droni si accendono, le ventole salgono di volume e lo sciame si alza a mezzo schermo. Resta in attesa per la durata qui sotto, poi passa alla posizione 1.
       </div>
-      <div class="field" id="fForma"><label>Formazione</label><div class="forma-grid" id="fldForma"><button class="forma-opt" data-f="cerchio"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#585d7e" stroke-width="1.8"></circle></svg><span>cerchio</span></button><button class="forma-opt" data-f="quadrato"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5" fill="none" stroke="#585d7e" stroke-width="1.8"></rect></svg><span>quadrato</span></button><button class="forma-opt" data-f="cuore"><svg viewBox="0 0 24 24"><path d="M12 19C5 14 4 9.5 6.5 7.2 8.4 5.5 11 6.4 12 8.2 13 6.4 15.6 5.5 17.5 7.2 20 9.5 19 14 12 19z" fill="none" stroke="#585d7e" stroke-width="1.8" stroke-linejoin="round"></path></svg><span>cuore</span></button><button class="forma-opt" data-f="freccia"><svg viewBox="0 0 24 24"><path d="M3 12h14M12 6l6 6-6 6" fill="none" stroke="#585d7e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>freccia</span></button><button class="forma-opt" data-f="linea"><svg viewBox="0 0 24 24"><path d="M4 12h16" stroke="#585d7e" stroke-width="1.8" stroke-linecap="round"></path><circle cx="4" cy="12" r="1.6" fill="#585d7e"></circle><circle cx="12" cy="12" r="1.6" fill="#585d7e"></circle><circle cx="20" cy="12" r="1.6" fill="#585d7e"></circle></svg><span>linea</span></button><button class="forma-opt" data-f="griglia"><svg viewBox="0 0 24 24"><g fill="#585d7e"><circle cx="7" cy="7" r="1.6"></circle><circle cx="12" cy="7" r="1.6"></circle><circle cx="17" cy="7" r="1.6"></circle><circle cx="7" cy="12" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="17" cy="12" r="1.6"></circle><circle cx="7" cy="17" r="1.6"></circle><circle cx="12" cy="17" r="1.6"></circle><circle cx="17" cy="17" r="1.6"></circle></g></svg><span>griglia</span></button><button class="forma-opt" data-f="sciame"><svg viewBox="0 0 24 24"><g fill="#585d7e"><circle cx="7" cy="9" r="1.5"></circle><circle cx="13" cy="6" r="1.5"></circle><circle cx="18" cy="11" r="1.5"></circle><circle cx="9" cy="15" r="1.5"></circle><circle cx="15" cy="17" r="1.5"></circle><circle cx="12" cy="11" r="1.5"></circle></g></svg><span>sciame</span></button><button class="forma-opt" data-f="sorriso"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#585d7e" stroke-width="1.8"></circle><circle cx="9" cy="10" r="1.1" fill="#585d7e"></circle><circle cx="15" cy="10" r="1.1" fill="#585d7e"></circle><path d="M8.5 14c1 1.6 5.9 1.6 7 0" fill="none" stroke="#585d7e" stroke-width="1.6" stroke-linecap="round"></path></svg><span>sorriso</span></button><button class="forma-opt" data-f="stella"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.5-.5z" fill="none" stroke="#585d7e" stroke-width="1.7" stroke-linejoin="round"></path></svg><span>stella</span></button><button class="forma-opt" data-f="lettera"><svg viewBox="0 0 24 24"><path d="M6 18V7.5a2.5 2.5 0 0 1 5 0V18M6 13h5" fill="none" stroke="#585d7e" stroke-width="1.8" stroke-linecap="round"></path><path d="M14 18l3-9 3 9M14.8 15.5h4.4" fill="none" stroke="#585d7e" stroke-width="1.5" stroke-linecap="round"></path></svg><span>lettera</span></button></div></div>
-      <div class="field" id="fLettera" style="display:none"><label>Carattere (lo sciame disegna questa lettera)</label><div class="seg letter-seg" id="fldLettera"><button data-l="A">A</button><button data-l="B">B</button><button data-l="C">C</button><button data-l="D">D</button><button data-l="E">E</button><button data-l="F">F</button><button data-l="G">G</button><button data-l="H">H</button><button data-l="I">I</button><button data-l="J">J</button><button data-l="K">K</button><button data-l="L">L</button><button data-l="M">M</button><button data-l="N">N</button><button data-l="O">O</button><button data-l="P">P</button><button data-l="Q">Q</button><button data-l="R">R</button><button data-l="S">S</button><button data-l="T">T</button><button data-l="U">U</button><button data-l="V">V</button><button data-l="W">W</button><button data-l="X">X</button><button data-l="Y">Y</button><button data-l="Z">Z</button><button data-l="0">0</button><button data-l="1">1</button><button data-l="2">2</button><button data-l="3">3</button><button data-l="4">4</button><button data-l="5">5</button><button data-l="6">6</button><button data-l="7">7</button><button data-l="8">8</button><button data-l="9">9</button></div></div>
+      <div class="field" id="fForma"><label>Formazione</label><div class="forma-grid" id="fldForma"></div></div>
+      <div class="field" id="fLettera" style="display:none"><label>Carattere (lo sciame disegna questa lettera)</label><div class="seg letter-seg" id="fldLettera"></div></div>
       <div class="field" id="fDroni"><label>Numero di droni</label><div class="range-row"><input type="range" id="fldDroni" min="0" max="60" step="1"><span class="range-val" id="valDroni">0</span></div></div>
-      <div class="field" id="fColore"><label>Colore</label><div class="swatch-row" id="fldColore"><button class="sw" data-c="bianco" title="bianco" style="background: rgb(234, 242, 255);"></button><button class="sw" data-c="oro" title="oro" style="background: rgb(255, 207, 90);"></button><button class="sw" data-c="azzurro" title="azzurro" style="background: rgb(84, 176, 255);"></button><button class="sw" data-c="verde" title="verde" style="background: rgb(75, 224, 138);"></button><button class="sw" data-c="viola" title="viola" style="background: rgb(176, 123, 255);"></button><button class="sw" data-c="rosa" title="rosa" style="background: rgb(255, 126, 196);"></button></div></div>
-      <div class="field" id="fBlink"><label>Lampeggio</label><div class="seg" id="fldBlink"><button data-b="nessuno">nessuno</button><button data-b="1">1×</button><button data-b="2">2×</button><button data-b="3">3×</button><button data-b="4">4×</button></div></div>
-      <div class="field" id="fSuono"><label>Suono al punto</label><div class="seg" id="fldSuono"><button data-s="nessuno">nessuno</button><button data-s="Do">Do</button><button data-s="Re">Re</button><button data-s="Mi">Mi</button><button data-s="Fa">Fa</button><button data-s="Sol">Sol</button><button data-s="La">La</button><button data-s="Si">Si</button><button data-s="Accordo">Accordo</button></div></div>
+      <div class="field" id="fColore"><label>Colore</label><div class="swatch-row" id="fldColore"></div></div>
+      <div class="field" id="fBlink"><label>Lampeggio</label><div class="seg" id="fldBlink"></div></div>
+      <div class="field" id="fSuono"><label>Suono al punto</label><div class="seg" id="fldSuono"></div></div>
       <div class="field"><label id="durLabel">Durata del punto</label><div class="range-row"><input type="range" id="fldDur" min="0.5" max="6" step="0.5"><span class="range-val" id="valDur">2.0s</span></div></div>
     </div>
     <div class="popup-foot">
       <div class="move-grp">
-        <button id="popLeft" title="Sposta a sinistra"><svg width="14" height="14" viewBox="0 0 12 12"><path d="M7.5 2L3.5 6l4 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
-        <button id="popRight" title="Sposta a destra"><svg width="14" height="14" viewBox="0 0 12 12"><path d="M4.5 2l4 4-4 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <button id="popLeft" title="Sposta a sinistra"><svg width="14" height="14" viewBox="0 0 12 12"><path d="M7.5 2L3.5 6l4 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button id="popRight" title="Sposta a destra"><svg width="14" height="14" viewBox="0 0 12 12"><path d="M4.5 2l4 4-4 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <button class="btn-del" id="popDel">Elimina punto</button>
       <button class="btn-save" id="popSave">Fatto</button>
@@ -304,7 +304,7 @@ header{
   <div class="drawer-card">
     <header>
       <b>Un algoritmo, scritto nel cielo</b>
-      <button class="x" id="drawerX"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="#fff" stroke-width="1.7" stroke-linecap="round"></path></svg></button>
+      <button class="x" id="drawerX"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg></button>
     </header>
     <div class="drawer-body">
       <p style="font-size:14px;color:var(--ink-soft);line-height:1.55;margin-bottom:20px">Uno spettacolo di droni è un <b>algoritmo nel tempo</b>: una sequenza ordinata di fotogrammi. Ogni punto sulla linea del tempo descrive uno <b>stato</b> dello sciame (quanti droni, che forma, che colore, quale suono) e per quanto dura. Premi <b>Esegui</b>: i droni decollano e passano da un punto al successivo con transizioni fluide.</p>
@@ -918,6 +918,5 @@ resize();
 loadExample('Saluto');
 setStatus('— a terra —',true);
 </script>
-
-
-</body></html>
+</body>
+</html>
