@@ -184,6 +184,67 @@ header{
 .concept h4 code{font-family:var(--mono);font-size:12px;background:var(--panel-2);padding:1px 6px;border-radius:5px;color:var(--water)}
 .concept p{font-size:12.5px;color:var(--ink-soft);line-height:1.5}
 
+/* ===== SIMULATORE DI VOLO ===== */
+.sim-btn{background:rgba(123,134,255,.18)}
+.sim-btn:hover{background:rgba(123,134,255,.32)}
+#sim{position:fixed;inset:0;z-index:60;background:#05071a;display:none;touch-action:none;overflow:hidden}
+#sim.on{display:block}
+#simCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sim-top{position:absolute;top:0;left:0;right:0;height:52px;display:flex;align-items:center;gap:14px;padding:0 16px;
+  background:linear-gradient(180deg,rgba(7,10,31,.85),rgba(7,10,31,0));color:#fff;z-index:3;pointer-events:none}
+.sim-top .sim-exit{pointer-events:auto;display:flex;align-items:center;gap:7px;padding:8px 13px;border-radius:10px;background:rgba(255,255,255,.14);color:#fff;font-size:13px;font-weight:600}
+.sim-top .sim-exit:hover{background:rgba(255,255,255,.26)}
+.sim-title{font-family:var(--disp);font-weight:700;font-size:15px}
+.sim-title span{color:#9aa3d8;font-weight:500;font-size:11px;margin-left:6px}
+.sim-tele{margin-left:auto;display:flex;gap:18px;font-family:var(--mono);font-size:12px;color:#cfd5ff}
+.sim-tele b{display:block;font-size:15px;color:#fff;font-weight:600}
+.sim-tele .lab{font-size:9px;letter-spacing:.6px;text-transform:uppercase;color:#7e87bd}
+.batt{width:46px;height:9px;border-radius:3px;border:1px solid #7e87bd;padding:1px;display:inline-block;vertical-align:middle}
+.batt i{display:block;height:100%;border-radius:2px;background:#4be08a;transition:width .3s, background .3s}
+.sim-reset{pointer-events:auto;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.14);color:#fff;font-size:12.5px;font-weight:600}
+.sim-reset:hover{background:rgba(255,255,255,.26)}
+.sim-hint{position:absolute;left:50%;top:64px;transform:translateX(-50%);z-index:3;color:#aeb6ff;font-size:12.5px;background:rgba(7,10,31,.6);border:1px solid rgba(123,134,255,.3);border-radius:10px;padding:7px 14px;pointer-events:none;transition:opacity .5s}
+.sim-stick-lab{position:absolute;bottom:14px;z-index:2;font-family:var(--mono);font-size:10.5px;color:#6f78ad;pointer-events:none}
+.sim-stick-lab.l{left:26px}.sim-stick-lab.r{right:26px}
+
+.sim-modes{display:flex;gap:2px;background:rgba(255,255,255,.08);border-radius:11px;padding:3px;pointer-events:auto}
+.sim-modes .sm{padding:7px 13px;border-radius:8px;color:#aeb6ff;font-size:12.5px;font-weight:600;background:transparent}
+.sim-modes .sm:hover{color:#fff}
+.sim-modes .sm.on{background:#5460e6;color:#fff}
+.sim-prog{position:absolute;left:0;top:52px;bottom:0;width:300px;z-index:4;display:none;flex-direction:column;gap:0;
+  background:rgba(8,11,30,.94);border-right:1px solid rgba(123,134,255,.25);padding:16px}
+#sim.prog .sim-prog{display:flex}
+.sp-head{font-family:var(--disp);font-weight:700;font-size:15px;color:#fff;display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.sp-head span{font-family:var(--mono);font-size:11px;color:#7e87bd;font-weight:400}
+.sp-cmds{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
+.sp-cmds button{padding:9px 8px;border-radius:9px;background:rgba(123,134,255,.16);color:#dfe4ff;font-size:12.5px;font-weight:600;text-align:left;display:flex;align-items:center;gap:7px}
+.sp-cmds button:hover{background:rgba(123,134,255,.32)}
+.sp-cmds button svg{flex:0 0 14px}
+.sp-list{flex:1;overflow:auto;display:flex;flex-direction:column;gap:5px;padding:4px;background:rgba(0,0,0,.25);border-radius:10px;min-height:80px}
+.sp-row{display:flex;align-items:center;gap:8px;background:rgba(123,134,255,.14);border-radius:8px;padding:7px 10px;font-size:12.5px;color:#eaf0ff}
+.sp-row.run{outline:2px solid var(--amber)}
+.sp-row .n{font-family:var(--mono);color:#7e87bd;font-size:11px;min-width:16px}
+.sp-row .gx{margin-left:auto;color:#8b93c8;cursor:pointer;font-family:var(--mono)}
+.sp-row .gx:hover{color:#ff9b9b}
+.sp-empty{color:#6f78ad;font-size:12px;text-align:center;padding:18px 8px}
+.sp-foot{display:flex;gap:8px;margin-top:12px}
+.sp-run{flex:1;padding:11px;border-radius:10px;background:var(--green);color:#fff;font-weight:700;font-size:14px}
+.sp-run:hover{filter:brightness(1.08)}
+.sp-run.stop{background:var(--amber)}
+.sp-clear{padding:11px 14px;border-radius:10px;background:rgba(255,255,255,.12);color:#cfd5ff;font-weight:600;font-size:13px}
+.sp-clear:hover{background:rgba(255,255,255,.22)}
+.sp-ex{margin-top:12px;font-size:11px;color:#7e87bd;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sp-exb{padding:6px 10px;border-radius:8px;background:rgba(75,224,138,.14);color:#9ff0bd;font-size:11.5px;font-weight:600}
+.sp-exb:hover{background:rgba(75,224,138,.26)}
+.sim-banner{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%) scale(.9);z-index:6;opacity:0;pointer-events:none;
+  background:rgba(8,11,30,.95);border:1px solid rgba(123,134,255,.4);border-radius:18px;padding:26px 38px;text-align:center;color:#fff;
+  font-family:var(--disp);transition:opacity .4s, transform .4s}
+.sim-banner.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+#sim.prog .sim-stick-lab{display:none}
+#sim.prog .sim-hint{display:none}
+.sim-banner b{display:block;font-size:30px;margin-bottom:4px}
+.sim-banner small{font-size:13px;color:#aeb6ff;font-family:var(--body);font-weight:500}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:760px){
   header{flex-wrap:wrap;height:auto;padding:9px 12px;gap:9px}
@@ -212,6 +273,7 @@ header{
     <button class="tbtn" id="btnReset"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1a5.5 5.5 0 1 0 5 3.2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M11 1.2v3.2H7.8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Azzera</span></button>
   </div>
   <div class="speed"><span>Velocità</span><input type="range" id="speed" min="0.4" max="3" step="0.1" value="1"><span id="speedVal" style="font-family:var(--mono);min-width:30px">1.0×</span></div>
+  <button class="tbtn sim-btn" id="btnSim" title="Simulatore di volo"><svg width="15" height="15" viewBox="0 0 16 16"><g fill="currentColor"><circle cx="3.4" cy="3.4" r="2.1"/><circle cx="12.6" cy="3.4" r="2.1"/><circle cx="3.4" cy="12.6" r="2.1"/><circle cx="12.6" cy="12.6" r="2.1"/></g><rect x="6.4" y="6.4" width="3.2" height="3.2" rx="1" fill="currentColor"/><g stroke="currentColor" stroke-width="1.2"><path d="M4.6 4.6l1.6 1.6M11.4 4.6l-1.6 1.6M4.6 11.4l1.6-1.6M11.4 11.4l-1.6-1.6"/></g></svg><span class="lbl">Simulatore</span></button>
   <button class="hbtn" id="btnHelp" title="Cos'è uno spettacolo di droni?"><svg width="15" height="15" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="7" cy="4.3" r=".9" fill="currentColor"/></svg></button>
 </header>
 
@@ -315,6 +377,47 @@ header{
       <p style="font-size:12.5px;color:var(--ink-soft);background:var(--panel-2);padding:12px 14px;border-radius:10px;margin-top:6px">Idea per la classe: a piccoli gruppi, progettate uno spettacolo di 6–8 punti su un tema (le stagioni, una storia, un'emozione). Confrontate le scelte di forme, colori e tempi: ogni gruppo "esegue" il proprio algoritmo.</p>
     </div>
   </div>
+</div>
+
+<!-- ===== SIMULATORE DI VOLO ===== -->
+<div id="sim">
+  <canvas id="simCanvas"></canvas>
+  <div class="sim-top">
+    <button class="sim-exit" id="simExit"><svg width="13" height="13" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Esci</button>
+    <div class="sim-modes">
+      <button class="sm on" data-m="libero">Libero</button>
+      <button class="sm" data-m="gara">Gara 60s</button>
+      <button class="sm" data-m="programma">Programma</button>
+    </div>
+    <div class="sim-tele">
+      <div id="simTimerBox" style="display:none"><span class="lab">Tempo</span><b id="simTimer">60</b></div>
+      <div><span class="lab">Quota</span><b id="simAlt">0 m</b></div>
+      <div><span class="lab">Velocità</span><b id="simSpd">0</b></div>
+      <div><span class="lab">Anelli</span><b id="simScore">0</b></div>
+      <div><span class="lab">Batteria</span><b><span class="batt"><i id="simBattBar" style="width:100%"></i></span></b></div>
+      <button class="sim-reset" id="simReset">Ricarica</button>
+    </div>
+  </div>
+  <div class="sim-hint" id="simHint">Pollice sinistro: sali / scendi · destro: spostati. Da Mac: W/S salita, A/D o frecce spostamento, Q/E rotazione. Attraversa gli anelli.</div>
+  <div class="sim-stick-lab l" id="simLabL">quota / rotazione</div>
+  <div class="sim-stick-lab r" id="simLabR">spostamento</div>
+
+  <!-- pannello Programma -->
+  <div class="sim-prog" id="simProg">
+    <div class="sp-head">Programma di volo<span id="spCount">0 comandi</span></div>
+    <div class="sp-cmds" id="spCmds"></div>
+    <div class="sp-list" id="spList"></div>
+    <div class="sp-foot">
+      <button class="sp-run" id="spRun">Esegui</button>
+      <button class="sp-clear" id="spClear">Svuota</button>
+    </div>
+    <div class="sp-ex">
+      <span>Esercizi:</span>
+      <button class="sp-exb" data-ex="quadrato">Vola in quadrato</button>
+      <button class="sp-exb" data-ex="saliscendi">Sali e atterra</button>
+    </div>
+  </div>
+  <div class="sim-banner" id="simBanner"></div>
 </div>
 
 <script>
@@ -453,6 +556,7 @@ function setFormation(forma){
 function hexA(hex,a){ const n=parseInt(hex.slice(1),16); return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${a})`; }
 
 function drawScene(){
+  if(simOpen){ requestAnimationFrame(drawScene); return; }
   show.t++;
   // lift segue lo stato (decollo/atterraggio morbidi)
   const target=show.airborne?1:0;
@@ -910,6 +1014,256 @@ document.getElementById('btnHelp').onclick=openDrawer;
 document.getElementById('btnHelp2').onclick=openDrawer;
 document.getElementById('drawerX').onclick=()=>drawer.classList.remove('on');
 drawer.onclick=(e)=>{ if(e.target===drawer) drawer.classList.remove('on'); };
+
+/* ============================================================
+   SIMULATORE DI VOLO — pilota un drone con due joystick
+   ============================================================ */
+let simOpen=false;
+(function(){
+  const root=document.getElementById('sim');
+  const scv=document.getElementById('simCanvas'), sx=scv.getContext('2d');
+  let W=0,H=0,DPR=Math.min(window.devicePixelRatio||1,2);
+  function fit(){ const r=scv.getBoundingClientRect(); W=r.width; H=r.height; scv.width=W*DPR; scv.height=H*DPR; sx.setTransform(DPR,0,0,DPR,0,0); }
+  const altEl=document.getElementById('simAlt'), spdEl=document.getElementById('simSpd'),
+        scoreEl=document.getElementById('simScore'), battBar=document.getElementById('simBattBar'), hintEl=document.getElementById('simHint'),
+        timerBox=document.getElementById('simTimerBox'), timerEl=document.getElementById('simTimer'), banner=document.getElementById('simBanner');
+
+  const D={x:0,y:0,vx:0,vy:0,bank:0,pitch:0,yaw:0,spinV:0,batt:1,score:0,act:0};
+  let stars=[], rings=[], raf=0, last=0;
+  let mode='libero';                 // 'libero' | 'gara' | 'programma'
+  let timer=0, timing=false, garaOver=false;
+
+  // ---- joystick dinamici (touch/mouse) ----
+  const KR=62;
+  const L={active:false,pid:null,bx:0,by:0,kx:0,ky:0,vx:0,vy:0,ax:0,ay:0};
+  const R={active:false,pid:null,bx:0,by:0,kx:0,ky:0,vx:0,vy:0,ax:0,ay:0};
+  function anchors(){ L.ax=90; L.ay=H-96; R.ax=W-90; R.ay=H-96; }
+  function setStick(s,px,py){ let dx=px-s.bx, dy=py-s.by; const d=Math.hypot(dx,dy); if(d>KR){ dx*=KR/d; dy*=KR/d; } s.kx=s.bx+dx; s.ky=s.by+dy; s.vx=dx/KR; s.vy=dy/KR; }
+  root.addEventListener('pointerdown',e=>{
+    if(!simOpen||mode==='programma') return;
+    if(e.target.closest && e.target.closest('.sim-top')) return;
+    const s = e.clientX < W/2 ? L : R; if(s.active) return;
+    s.active=true; s.pid=e.pointerId; s.bx=e.clientX; s.by=e.clientY; setStick(s,e.clientX,e.clientY);
+    hintEl.style.opacity='0';
+  });
+  root.addEventListener('pointermove',e=>{
+    if(L.active&&e.pointerId===L.pid) setStick(L,e.clientX,e.clientY);
+    else if(R.active&&e.pointerId===R.pid) setStick(R,e.clientX,e.clientY);
+  });
+  function rel(e){ if(L.active&&e.pointerId===L.pid){L.active=false;L.vx=L.vy=0;} if(R.active&&e.pointerId===R.pid){R.active=false;R.vx=R.vy=0;} }
+  root.addEventListener('pointerup',rel); root.addEventListener('pointercancel',rel);
+
+  // ---- tastiera (Mac) ----
+  const keys=new Set();
+  window.addEventListener('keydown',e=>{
+    if(!simOpen) return;
+    const k=e.key.toLowerCase();
+    if(['arrowup','arrowdown','arrowleft','arrowright',' '].includes(k)) e.preventDefault();
+    if(k==='escape'){ close(); return; }
+    keys.add(k); hintEl.style.opacity='0';
+  });
+  window.addEventListener('keyup',e=>{ keys.delete(e.key.toLowerCase()); });
+  function keyVec(){
+    let vy=0,vx=0,yaw=0;
+    if(keys.has('w')||keys.has('arrowup')) vy-=1;
+    if(keys.has('s')||keys.has('arrowdown')) vy+=1;
+    if(keys.has('a')||keys.has('arrowleft')) vx-=1;
+    if(keys.has('d')||keys.has('arrowright')) vx+=1;
+    if(keys.has('q')) yaw-=1;
+    if(keys.has('e')) yaw+=1;
+    return {vx,vy,yaw};
+  }
+
+  function makeStars(){ stars=[]; for(let i=0;i<90;i++) stars.push({x:Math.random(),y:Math.random()*0.78,r:Math.random()*1.1+0.3,tw:Math.random()*6.28}); }
+  function placeRing(rg){ rg.x=80+Math.random()*(W-160); rg.y=90+Math.random()*(H-230); rg.cool=0; rg.flash=0; rg.r=34+Math.random()*14; }
+  function makeRings(){ rings=[]; for(let i=0;i<3;i++){ const rg={}; placeRing(rg); rings.push(rg); } }
+  function reset(){ anchors(); D.x=W/2; D.y=H*0.46; D.vx=D.vy=0; D.bank=D.pitch=D.yaw=0; D.spinV=0; D.batt=1; D.score=0; makeStars(); makeRings(); }
+
+  // ---- banner ----
+  function showBanner(title,sub){ banner.innerHTML='<b>'+title+'</b><small>'+sub+'</small>'; banner.classList.add('on'); }
+  function hideBanner(){ banner.classList.remove('on'); }
+
+  // ---- programma a blocchi ----
+  const auto={active:false,tx:0,ty:0};
+  let program=[], running=false, abort=false, runIdx=-1;
+  const PAL=[
+    {c:'decolla',t:'Decolla'},{c:'sali',t:'Sali'},{c:'scendi',t:'Scendi'},
+    {c:'sinistra',t:'Sinistra'},{c:'destra',t:'Destra'},{c:'ruota',t:'Ruota'},
+    {c:'attendi',t:'Attendi'},{c:'atterra',t:'Atterra'}
+  ];
+  const ICON={
+    decolla:'<svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 11V4M7 4L4 7M7 4l3 3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12.5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+    sali:'<svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 11V3M7 3L3.5 6.5M7 3l3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    scendi:'<svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 3v8M7 11l3.5-3.5M7 11L3.5 7.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    sinistra:'<svg width="14" height="14" viewBox="0 0 14 14"><path d="M11 7H3M3 7l3.5-3.5M3 7l3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    destra:'<svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7h8M11 7L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    ruota:'<svg width="14" height="14" viewBox="0 0 14 14"><path d="M11 7a4 4 0 1 1-1.4-3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M11 2.5V5H8.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    attendi:'<svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M7 4.2V7l2 1.4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    atterra:'<svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 3v7M7 10L4 7M7 10l3-3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12.5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>'
+  };
+  const cmdsBox=document.getElementById('spCmds'), listBox=document.getElementById('spList'),
+        countEl=document.getElementById('spCount'), runBtn=document.getElementById('spRun');
+  function buildPalette(){
+    cmdsBox.innerHTML='';
+    PAL.forEach(p=>{ const b=document.createElement('button'); b.innerHTML=ICON[p.c]+'<span>'+p.t+'</span>'; b.onclick=()=>{ if(running) return; program.push({c:p.c}); renderList(); }; cmdsBox.appendChild(b); });
+  }
+  function renderList(){
+    countEl.textContent=program.length+(program.length===1?' comando':' comandi');
+    if(!program.length){ listBox.innerHTML='<div class="sp-empty">Aggiungi comandi dal prontuario qui sopra, poi premi Esegui.</div>'; return; }
+    listBox.innerHTML='';
+    program.forEach((cmd,i)=>{
+      const lbl=PAL.find(p=>p.c===cmd.c).t;
+      const row=document.createElement('div'); row.className='sp-row'+(i===runIdx?' run':'');
+      row.innerHTML='<span class="n">'+(i+1)+'</span>'+ICON[cmd.c]+'<span>'+lbl+'</span>'+(running?'':'<span class="gx" data-i="'+i+'">×</span>');
+      listBox.appendChild(row);
+    });
+    listBox.querySelectorAll('.gx').forEach(x=>x.onclick=()=>{ if(running) return; program.splice(+x.dataset.i,1); renderList(); });
+  }
+  function wait(s){ return new Promise(res=>{ const t0=performance.now(); (function chk(){ if(abort||performance.now()-t0>=s*1000) return res(); requestAnimationFrame(chk); })(); }); }
+  function arrive(){ return new Promise(res=>{ const t0=performance.now(); (function chk(){ if(abort||Math.hypot(D.x-auto.tx,D.y-auto.ty)<9||performance.now()-t0>3800) return res(); requestAnimationFrame(chk); })(); }); }
+  async function exec(c){
+    const gY=H-54, topY=72, SX=130, SY=92;
+    auto.active=true;
+    if(c==='decolla'){ auto.tx=D.x; auto.ty=Math.min(D.y,H*0.42); auto.ty=H*0.42; await arrive(); }
+    else if(c==='sali'){ auto.tx=D.x; auto.ty=Math.max(topY,D.y-SY); await arrive(); }
+    else if(c==='scendi'){ auto.tx=D.x; auto.ty=Math.min(gY-2,D.y+SY); await arrive(); }
+    else if(c==='destra'){ auto.ty=D.y; auto.tx=Math.min(W-30,D.x+SX); await arrive(); }
+    else if(c==='sinistra'){ auto.ty=D.y; auto.tx=Math.max(30,D.x-SX); await arrive(); }
+    else if(c==='ruota'){ auto.tx=D.x; auto.ty=D.y; D.spinV=7.0; await wait(0.9); D.spinV=0; }
+    else if(c==='attendi'){ auto.tx=D.x; auto.ty=D.y; await wait(1.2); }
+    else if(c==='atterra'){ auto.tx=D.x; auto.ty=gY; await arrive(); }
+  }
+  async function runProgram(){
+    if(running){ abort=true; return; }
+    if(!program.length) return;
+    running=true; abort=false; runBtn.textContent='Stop'; runBtn.classList.add('stop'); hideBanner();
+    for(let i=0;i<program.length;i++){ if(abort) break; runIdx=i; renderList(); await exec(program[i].c); }
+    runIdx=-1; auto.active=false; running=false; const done=!abort; abort=false;
+    runBtn.textContent='Esegui'; runBtn.classList.remove('stop'); renderList();
+    if(done) showBanner('Programma eseguito','Il drone ha completato la sequenza'), setTimeout(hideBanner,2200);
+  }
+
+  function setMode(m){
+    mode=m; abort=true; running=false; runIdx=-1; auto.active=false;
+    runBtn.textContent='Esegui'; runBtn.classList.remove('stop');
+    document.querySelectorAll('.sim-modes .sm').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+    root.classList.toggle('prog',m==='programma');
+    timing=false; garaOver=false; hideBanner();
+    timerBox.style.display = m==='gara'?'':'none';
+    L.active=R.active=false; L.vx=L.vy=R.vx=R.vy=0;
+    if(m==='gara'){ D.score=0; timer=60; timing=true; garaOver=false; makeRings(); D.x=W/2; D.y=H*0.46; D.vx=D.vy=0; hintEl.textContent='Attraversa più anelli possibile in 60 secondi!'; hintEl.style.opacity='1'; }
+    else if(m==='programma'){ D.x=W/2; D.y=H*0.42; D.vx=D.vy=0; renderList(); }
+    else { hintEl.textContent='Pollice/joystick o tastiera (W/S, A/D o frecce, Q/E). Attraversa gli anelli.'; hintEl.style.opacity='1'; }
+  }
+
+  function step(dt,t){
+    const MAXV=350, ease=Math.min(1,dt*6), gY=H-54, topY=70;
+    let tvx=0,tvy=0,inAct=0,yawIn=0;
+    if(mode==='programma'){
+      if(auto.active){ const k=3.4; tvx=Math.max(-300,Math.min(300,(auto.tx-D.x)*k)); tvy=Math.max(-300,Math.min(300,(auto.ty-D.y)*k)); }
+    } else if(!garaOver){
+      const K=keyVec();
+      const evx=Math.max(-1,Math.min(1,R.vx+K.vx)), evy=Math.max(-1,Math.min(1,L.vy+K.vy));
+      tvx=evx*MAXV; tvy=evy*MAXV; inAct=Math.abs(evx)+Math.abs(evy); yawIn=(L.vx+K.yaw);
+    }
+    D.vx += (tvx-D.vx)*ease; D.vy += (tvy-D.vy)*ease;
+    if(D.batt<=0 && mode!=='programma'){ D.vy += 60*dt; }
+    D.x += D.vx*dt; D.y += D.vy*dt;
+    if(D.y>gY){ D.y=gY; if(D.vy>0)D.vy=0; } if(D.y<topY){ D.y=topY; if(D.vy<0)D.vy=0; }
+    if(D.x<28){D.x=28;D.vx=0;} if(D.x>W-28){D.x=W-28;D.vx=0;}
+    D.bank += ((tvx/MAXV)*0.5 - D.bank)*0.12;
+    D.yaw += (D.spinV + yawIn*4)*dt;
+    D.act=Math.min(1, Math.hypot(D.vx,D.vy)/210);
+    if(mode!=='programma') D.batt=Math.max(0, D.batt-(0.004+D.act*0.013)*dt);
+    if(typeof audio!=='undefined' && audio){ fanLevel((0.2+0.5*D.act)*(D.batt>0?1:0.35),0.08); fanRpm(0.9+0.55*D.act,0.12); }
+    // anelli (solo libero/gara)
+    if(mode!=='programma'){
+      rings.forEach(rg=>{ rg.cool=Math.max(0,rg.cool-dt); if(rg.cool<=0 && Math.hypot(D.x-rg.x,D.y-rg.y)<rg.r*0.6){ D.score++; rg.flash=0.4; placeRing(rg); rg.cool=0.6; } if(rg.flash>0) rg.flash-=dt; });
+    }
+    // timer gara
+    if(mode==='gara' && timing){ timer-=dt; if(timer<=0){ timer=0; timing=false; garaOver=true; showBanner(D.score+(D.score===1?' anello':' anelli'),'Tempo scaduto · ripremi “Gara 60s” per riprovare'); } timerEl.textContent=Math.ceil(timer); }
+    // telemetria
+    altEl.textContent=Math.round((gY-D.y)/(gY-topY)*60)+' m';
+    spdEl.textContent=Math.round(Math.hypot(D.vx,D.vy)/9);
+    scoreEl.textContent=D.score;
+    battBar.style.width=(D.batt*100).toFixed(0)+'%';
+    battBar.style.background = D.batt<0.2?'#f0a830':(D.batt<0.5?'#f6c468':'#4be08a');
+  }
+
+  function drawRing(rg,t){
+    const glow = rg.flash>0 ? '#ffffff' : '#7b86ff';
+    sx.save(); sx.translate(rg.x,rg.y);
+    sx.strokeStyle=glow; sx.globalAlpha=0.9; sx.lineWidth=5;
+    sx.beginPath(); sx.ellipse(0,0,rg.r,rg.r*0.92,0,0,6.283); sx.stroke();
+    sx.globalAlpha=0.25; sx.lineWidth=11; sx.stroke();
+    sx.globalAlpha=1; sx.restore();
+  }
+  function drawDrone(t){
+    const spin=t*0.001*(7+D.act*26);
+    sx.save(); sx.translate(D.x,D.y); sx.rotate(D.bank*0.5 + D.yaw);
+    const A=22;
+    sx.strokeStyle='#2a3270'; sx.lineWidth=4; sx.lineCap='round';
+    sx.beginPath(); sx.moveTo(-A,-A*0.6); sx.lineTo(A,A*0.6); sx.moveTo(A,-A*0.6); sx.lineTo(-A,A*0.6); sx.stroke();
+    const rot=[[-A,-A*0.6,'#4be08a'],[A,-A*0.6,'#4be08a'],[-A,A*0.6,'#ff7e7e'],[A,A*0.6,'#ff7e7e']];
+    rot.forEach(p=>{
+      sx.save(); sx.translate(p[0],p[1]);
+      sx.fillStyle='rgba(123,134,255,.16)'; sx.beginPath(); sx.arc(0,0,11,0,6.283); sx.fill();
+      sx.strokeStyle='rgba(180,190,255,.55)'; sx.lineWidth=2;
+      for(let b=0;b<2;b++){ const a=spin+b*Math.PI; sx.beginPath(); sx.moveTo(Math.cos(a)*10,Math.sin(a)*10); sx.lineTo(Math.cos(a+Math.PI)*10,Math.sin(a+Math.PI)*10); sx.stroke(); }
+      sx.fillStyle=p[2]; sx.beginPath(); sx.arc(0,0,2.4,0,6.283); sx.fill();
+      sx.restore();
+    });
+    sx.fillStyle='#1a2150'; sx.strokeStyle='#5460e6'; sx.lineWidth=2;
+    sx.beginPath(); sx.roundRect ? sx.roundRect(-12,-9,24,18,5) : sx.rect(-12,-9,24,18); sx.fill(); sx.stroke();
+    sx.fillStyle='#7b86ff'; sx.beginPath(); sx.arc(0,-2,3,0,6.283); sx.fill();
+    sx.restore();
+  }
+  function drawStick(s){
+    const bx=s.active?s.bx:s.ax, by=s.active?s.by:s.ay, kx=s.active?s.kx:s.ax, ky=s.active?s.ky:s.ay;
+    sx.save();
+    sx.globalAlpha=s.active?0.5:0.22;
+    sx.strokeStyle='#cfd5ff'; sx.lineWidth=2; sx.beginPath(); sx.arc(bx,by,KR,0,6.283); sx.stroke();
+    sx.globalAlpha=s.active?0.85:0.4;
+    sx.fillStyle='#cfd5ff'; sx.beginPath(); sx.arc(kx,ky,22,0,6.283); sx.fill();
+    sx.restore();
+  }
+  function draw(t){
+    const bg=sx.createLinearGradient(0,0,0,H);
+    bg.addColorStop(0,'#05071a'); bg.addColorStop(0.6,'#0a0f2e'); bg.addColorStop(1,'#121a3e');
+    sx.fillStyle=bg; sx.fillRect(0,0,W,H);
+    for(const st of stars){ const a=0.3+0.3*Math.sin(t*0.001*2+st.tw); sx.fillStyle='rgba(200,210,255,'+(a*0.5)+')'; sx.beginPath(); sx.arc(st.x*W,st.y*H,st.r,0,6.283); sx.fill(); }
+    const gnd=sx.createLinearGradient(0,H-54,0,H); gnd.addColorStop(0,'rgba(6,8,24,0)'); gnd.addColorStop(1,'rgba(4,6,18,.96)');
+    sx.fillStyle=gnd; sx.fillRect(0,H-54,W,54);
+    if(mode!=='programma') rings.forEach(rg=>drawRing(rg,t));
+    drawDrone(t);
+    if(mode!=='programma'){ drawStick(L); drawStick(R); }
+  }
+  function frame(t){ if(!simOpen) return; const dt=Math.min(0.05,(t-last)/1000)||0.016; last=t; step(dt,t); draw(t); raf=requestAnimationFrame(frame); }
+
+  function open(){
+    simOpen=true; root.classList.add('on'); fit(); reset();
+    buildPalette(); program=[]; renderList();
+    setMode('libero');
+    if(typeof ensureAudio==='function'){ ensureAudio(); if(audio){ audio.A.resume(); fanLevel(0.22,0.25); fanRpm(0.95,0.3); } }
+    last=performance.now(); raf=requestAnimationFrame(frame);
+  }
+  function close(){ simOpen=false; abort=true; running=false; root.classList.remove('on'); cancelAnimationFrame(raf); keys.clear(); if(typeof fanLevel==='function') fanLevel(0); }
+
+  window.addEventListener('resize',()=>{ if(simOpen){ fit(); anchors(); } });
+  document.getElementById('btnSim').onclick=open;
+  document.getElementById('simExit').onclick=close;
+  document.getElementById('simReset').onclick=()=>{ D.batt=1; };
+  document.querySelectorAll('.sim-modes .sm').forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+  runBtn.onclick=runProgram;
+  document.getElementById('spClear').onclick=()=>{ if(running) return; program=[]; renderList(); };
+  document.querySelectorAll('.sp-exb').forEach(b=>b.onclick=()=>{
+    if(running) return;
+    const ex=b.dataset.ex;
+    if(ex==='quadrato') program=[{c:'decolla'},{c:'destra'},{c:'destra'},{c:'sali'},{c:'sali'},{c:'sinistra'},{c:'sinistra'},{c:'scendi'},{c:'scendi'},{c:'atterra'}];
+    else if(ex==='saliscendi') program=[{c:'decolla'},{c:'sali'},{c:'sali'},{c:'attendi'},{c:'scendi'},{c:'scendi'},{c:'atterra'}];
+    renderList();
+  });
+})();
 
 /* ============================================================
    AVVIO
