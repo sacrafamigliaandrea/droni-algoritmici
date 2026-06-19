@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0063)file:///Users/sacrafamigliamac/Downloads/droni-algoritmici.html -->
+<html lang="it"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Droni — Spettacolo sulla timeline</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
 :root{
   --water:#5460e6; --water-bright:#7b86ff; --water-deep:#0b1030;
@@ -158,6 +158,8 @@ header{
 .btn-del:hover{background:#fbe9c8}
 .tk-note{font-size:12.5px;line-height:1.5;color:var(--ink-soft);background:linear-gradient(120deg,#eef0ff,#f3f3fb);border:1px solid #d9ddf5;border-radius:12px;padding:12px 14px}
 .tk-note b{color:var(--water)}
+.letter-seg{max-height:108px;overflow-y:auto}
+.letter-seg button{min-width:34px;padding:7px 0;text-align:center}
 .btn-save{margin-left:auto;padding:10px 22px;border-radius:10px;background:var(--water);color:#fff;font-weight:700;font-size:14px}
 .btn-save:hover{background:var(--water-bright)}
 
@@ -197,26 +199,26 @@ header{
 <header>
   <div class="brand">
     <svg width="30" height="30" viewBox="0 0 30 30">
-      <g fill="#7b86ff"><circle cx="15" cy="6" r="2.4"/><circle cx="6.5" cy="14" r="2.4"/><circle cx="23.5" cy="14" r="2.4"/><circle cx="10.5" cy="23" r="2.4"/><circle cx="19.5" cy="23" r="2.4"/></g>
-      <g stroke="rgba(123,134,255,.4)" stroke-width="1"><path d="M15 6L6.5 14M15 6l8.5 8M6.5 14l4 9M23.5 14l-4 9M10.5 23h9"/></g>
+      <g fill="#7b86ff"><circle cx="15" cy="6" r="2.4"></circle><circle cx="6.5" cy="14" r="2.4"></circle><circle cx="23.5" cy="14" r="2.4"></circle><circle cx="10.5" cy="23" r="2.4"></circle><circle cx="19.5" cy="23" r="2.4"></circle></g>
+      <g stroke="rgba(123,134,255,.4)" stroke-width="1"><path d="M15 6L6.5 14M15 6l8.5 8M6.5 14l4 9M23.5 14l-4 9M10.5 23h9"></path></g>
     </svg>
     <div class="brand-txt"><b>Droni Algoritmici</b><span>Componi lo spettacolo sulla linea del tempo</span></div>
   </div>
   <div class="spacer"></div>
   <div class="transport">
-    <button class="tbtn play" id="btnPlay"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z" fill="currentColor"/></svg><span class="lbl">Esegui</span></button>
-    <button class="tbtn" id="btnStep"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M2 1l6 5-6 5z" fill="currentColor"/><rect x="9" y="1" width="2" height="10" fill="currentColor"/></svg><span class="lbl">Passo</span></button>
-    <button class="tbtn" id="btnStop" disabled><svg width="12" height="12" viewBox="0 0 12 12"><rect x="1" y="1" width="10" height="10" rx="1.5" fill="currentColor"/></svg><span class="lbl">Stop</span></button>
-    <button class="tbtn" id="btnReset"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1a5.5 5.5 0 1 0 5 3.2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M11 1.2v3.2H7.8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Azzera</span></button>
+    <button class="tbtn play" id="btnPlay"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M2 1l9 5-9 5z" fill="currentColor"></path></svg><span class="lbl">Esegui</span></button>
+    <button class="tbtn" id="btnStep"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M2 1l6 5-6 5z" fill="currentColor"></path><rect x="9" y="1" width="2" height="10" fill="currentColor"></rect></svg><span class="lbl">Passo</span></button>
+    <button class="tbtn" id="btnStop" disabled=""><svg width="12" height="12" viewBox="0 0 12 12"><rect x="1" y="1" width="10" height="10" rx="1.5" fill="currentColor"></rect></svg><span class="lbl">Stop</span></button>
+    <button class="tbtn" id="btnReset"><svg width="13" height="13" viewBox="0 0 13 13"><path d="M6.5 1a5.5 5.5 0 1 0 5 3.2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"></path><path d="M11 1.2v3.2H7.8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="lbl">Azzera</span></button>
   </div>
   <div class="speed"><span>Velocità</span><input type="range" id="speed" min="0.4" max="3" step="0.1" value="1"><span id="speedVal" style="font-family:var(--mono);min-width:30px">1.0×</span></div>
-  <button class="hbtn" id="btnHelp" title="Cos'è uno spettacolo di droni?"><svg width="15" height="15" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="7" cy="4.3" r=".9" fill="currentColor"/></svg></button>
+  <button class="hbtn" id="btnHelp" title="Cos&#39;è uno spettacolo di droni?"><svg width="15" height="15" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"></circle><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><circle cx="7" cy="4.3" r=".9" fill="currentColor"></circle></svg></button>
 </header>
 
 <div class="layout">
   <!-- ===== CIELO ===== -->
   <section class="col-stage">
-    <canvas id="stage"></canvas>
+    <canvas id="stage" width="3004" height="1058"></canvas>
     <div class="stage-hud">
       <div class="hud-card">
         <div class="lab">Stato sciame</div>
@@ -232,7 +234,7 @@ header{
     </div>
     <div class="stage-foot">
       <button class="didattica-toggle" id="btnHelp2">
-        <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="7" cy="4.3" r=".9" fill="currentColor"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3" fill="none"></circle><path d="M7 6.2v3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path><circle cx="7" cy="4.3" r=".9" fill="currentColor"></circle></svg>
         Com'è fatto lo spettacolo?
       </button>
     </div>
@@ -242,18 +244,18 @@ header{
   <div class="console">
     <div class="toolbar">
       <h2>Linea del tempo</h2>
-      <button class="btn-add" id="btnAdd"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Aggiungi punto</button>
+      <button class="btn-add" id="btnAdd"><svg width="13" height="13" viewBox="0 0 12 12"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>Aggiungi punto</button>
       <div class="tool-sep"></div>
       <span class="tool-label">Esempi</span>
       <button class="ex-btn" data-ex="Saluto">Saluto</button>
       <button class="ex-btn" data-ex="Forme">Forme in sequenza</button>
       <button class="ex-btn" data-ex="Finale">Gran finale</button>
-      <span class="dur-total">Durata totale: <b id="durTotal">0s</b></span>
+      <span class="dur-total">Durata totale: <b id="durTotal">8.5s</b></span>
       <button class="btn-clear" id="btnClearAll">Svuota</button>
     </div>
     <div class="track-wrap" id="trackWrap">
-      <div class="track" id="track"></div>
-      <div class="playhead" id="playhead"></div>
+      <div class="track" id="track" style="width: 1470px;"><div class="axis"></div><div class="seg-dur" style="left: 102.5px;">2.5s</div><div class="seg-dur" style="left: 233px;">2s</div><div class="seg-dur" style="left: 363.5px;">2.5s</div><div class="seg-dur" style="left: 479.5px;">1.5s</div><div class="ev" style="left: 30px;"><div class="ev-dot" style="background:linear-gradient(135deg,#1a2150,#5460e6);color:#fff">0</div><div class="ev-label">decollo</div></div><div class="ev" style="left: 175px;"><div class="ev-dot" style="background:#54b0ff;color:#1c2030">1</div><div class="ev-label">cerchio<br><b>30</b> droni <svg width="9" height="9" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M3 5h2L8 3v7L5 8H3z" fill="#123E90"></path></svg></div></div><div class="ev" style="left: 291px;"><div class="ev-dot" style="background:#ff7ec4;color:#1c2030">2</div><div class="ev-label">cuore<br><b>40</b> droni <svg width="9" height="9" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M3 5h2L8 3v7L5 8H3z" fill="#123E90"></path></svg> <svg width="9" height="9" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M7 1L2 7h3l-1 4 5-6H6z" fill="#f0a830"></path></svg>2</div></div><div class="ev" style="left: 436px;"><div class="ev-dot" style="background:#eaf2ff;color:#1c2030">3</div><div class="ev-label">sciame<br><b>20</b> droni</div></div><button class="kf-add" id="kfAdd" title="Aggiungi una posizione" style="left: 523px;"><svg width="13" height="13" viewBox="0 0 14 14"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"></path></svg></button><div class="playhead" id="playhead" style="transition: none; left: 30px;"></div></div>
+      
     </div>
   </div>
 </div>
@@ -272,23 +274,24 @@ header{
   <div class="popup" role="dialog" aria-modal="true">
     <div class="popup-head">
       <b id="popTitle">Punto</b>
-      <button class="px" id="popClose"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+      <button class="px" id="popClose"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg></button>
     </div>
     <div class="popup-body">
       <div class="tk-note" id="takeoffNote" style="display:none">
         <b>Evento 0 — Decollo.</b> I droni si accendono, le ventole salgono di volume e lo sciame si alza a mezzo schermo. Resta in attesa per la durata qui sotto, poi passa alla posizione 1.
       </div>
-      <div class="field" id="fForma"><label>Formazione</label><div class="forma-grid" id="fldForma"></div></div>
+      <div class="field" id="fForma"><label>Formazione</label><div class="forma-grid" id="fldForma"><button class="forma-opt" data-f="cerchio"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#585d7e" stroke-width="1.8"></circle></svg><span>cerchio</span></button><button class="forma-opt" data-f="quadrato"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5" fill="none" stroke="#585d7e" stroke-width="1.8"></rect></svg><span>quadrato</span></button><button class="forma-opt" data-f="cuore"><svg viewBox="0 0 24 24"><path d="M12 19C5 14 4 9.5 6.5 7.2 8.4 5.5 11 6.4 12 8.2 13 6.4 15.6 5.5 17.5 7.2 20 9.5 19 14 12 19z" fill="none" stroke="#585d7e" stroke-width="1.8" stroke-linejoin="round"></path></svg><span>cuore</span></button><button class="forma-opt" data-f="freccia"><svg viewBox="0 0 24 24"><path d="M3 12h14M12 6l6 6-6 6" fill="none" stroke="#585d7e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>freccia</span></button><button class="forma-opt" data-f="linea"><svg viewBox="0 0 24 24"><path d="M4 12h16" stroke="#585d7e" stroke-width="1.8" stroke-linecap="round"></path><circle cx="4" cy="12" r="1.6" fill="#585d7e"></circle><circle cx="12" cy="12" r="1.6" fill="#585d7e"></circle><circle cx="20" cy="12" r="1.6" fill="#585d7e"></circle></svg><span>linea</span></button><button class="forma-opt" data-f="griglia"><svg viewBox="0 0 24 24"><g fill="#585d7e"><circle cx="7" cy="7" r="1.6"></circle><circle cx="12" cy="7" r="1.6"></circle><circle cx="17" cy="7" r="1.6"></circle><circle cx="7" cy="12" r="1.6"></circle><circle cx="12" cy="12" r="1.6"></circle><circle cx="17" cy="12" r="1.6"></circle><circle cx="7" cy="17" r="1.6"></circle><circle cx="12" cy="17" r="1.6"></circle><circle cx="17" cy="17" r="1.6"></circle></g></svg><span>griglia</span></button><button class="forma-opt" data-f="sciame"><svg viewBox="0 0 24 24"><g fill="#585d7e"><circle cx="7" cy="9" r="1.5"></circle><circle cx="13" cy="6" r="1.5"></circle><circle cx="18" cy="11" r="1.5"></circle><circle cx="9" cy="15" r="1.5"></circle><circle cx="15" cy="17" r="1.5"></circle><circle cx="12" cy="11" r="1.5"></circle></g></svg><span>sciame</span></button><button class="forma-opt" data-f="sorriso"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#585d7e" stroke-width="1.8"></circle><circle cx="9" cy="10" r="1.1" fill="#585d7e"></circle><circle cx="15" cy="10" r="1.1" fill="#585d7e"></circle><path d="M8.5 14c1 1.6 5.9 1.6 7 0" fill="none" stroke="#585d7e" stroke-width="1.6" stroke-linecap="round"></path></svg><span>sorriso</span></button><button class="forma-opt" data-f="stella"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.5-.5z" fill="none" stroke="#585d7e" stroke-width="1.7" stroke-linejoin="round"></path></svg><span>stella</span></button><button class="forma-opt" data-f="lettera"><svg viewBox="0 0 24 24"><path d="M6 18V7.5a2.5 2.5 0 0 1 5 0V18M6 13h5" fill="none" stroke="#585d7e" stroke-width="1.8" stroke-linecap="round"></path><path d="M14 18l3-9 3 9M14.8 15.5h4.4" fill="none" stroke="#585d7e" stroke-width="1.5" stroke-linecap="round"></path></svg><span>lettera</span></button></div></div>
+      <div class="field" id="fLettera" style="display:none"><label>Carattere (lo sciame disegna questa lettera)</label><div class="seg letter-seg" id="fldLettera"><button data-l="A">A</button><button data-l="B">B</button><button data-l="C">C</button><button data-l="D">D</button><button data-l="E">E</button><button data-l="F">F</button><button data-l="G">G</button><button data-l="H">H</button><button data-l="I">I</button><button data-l="J">J</button><button data-l="K">K</button><button data-l="L">L</button><button data-l="M">M</button><button data-l="N">N</button><button data-l="O">O</button><button data-l="P">P</button><button data-l="Q">Q</button><button data-l="R">R</button><button data-l="S">S</button><button data-l="T">T</button><button data-l="U">U</button><button data-l="V">V</button><button data-l="W">W</button><button data-l="X">X</button><button data-l="Y">Y</button><button data-l="Z">Z</button><button data-l="0">0</button><button data-l="1">1</button><button data-l="2">2</button><button data-l="3">3</button><button data-l="4">4</button><button data-l="5">5</button><button data-l="6">6</button><button data-l="7">7</button><button data-l="8">8</button><button data-l="9">9</button></div></div>
       <div class="field" id="fDroni"><label>Numero di droni</label><div class="range-row"><input type="range" id="fldDroni" min="0" max="60" step="1"><span class="range-val" id="valDroni">0</span></div></div>
-      <div class="field" id="fColore"><label>Colore</label><div class="swatch-row" id="fldColore"></div></div>
-      <div class="field" id="fBlink"><label>Lampeggio</label><div class="seg" id="fldBlink"></div></div>
-      <div class="field" id="fSuono"><label>Suono al punto</label><div class="seg" id="fldSuono"></div></div>
+      <div class="field" id="fColore"><label>Colore</label><div class="swatch-row" id="fldColore"><button class="sw" data-c="bianco" title="bianco" style="background: rgb(234, 242, 255);"></button><button class="sw" data-c="oro" title="oro" style="background: rgb(255, 207, 90);"></button><button class="sw" data-c="azzurro" title="azzurro" style="background: rgb(84, 176, 255);"></button><button class="sw" data-c="verde" title="verde" style="background: rgb(75, 224, 138);"></button><button class="sw" data-c="viola" title="viola" style="background: rgb(176, 123, 255);"></button><button class="sw" data-c="rosa" title="rosa" style="background: rgb(255, 126, 196);"></button></div></div>
+      <div class="field" id="fBlink"><label>Lampeggio</label><div class="seg" id="fldBlink"><button data-b="nessuno">nessuno</button><button data-b="1">1×</button><button data-b="2">2×</button><button data-b="3">3×</button><button data-b="4">4×</button></div></div>
+      <div class="field" id="fSuono"><label>Suono al punto</label><div class="seg" id="fldSuono"><button data-s="nessuno">nessuno</button><button data-s="Do">Do</button><button data-s="Re">Re</button><button data-s="Mi">Mi</button><button data-s="Fa">Fa</button><button data-s="Sol">Sol</button><button data-s="La">La</button><button data-s="Si">Si</button><button data-s="Accordo">Accordo</button></div></div>
       <div class="field"><label id="durLabel">Durata del punto</label><div class="range-row"><input type="range" id="fldDur" min="0.5" max="6" step="0.5"><span class="range-val" id="valDur">2.0s</span></div></div>
     </div>
     <div class="popup-foot">
       <div class="move-grp">
-        <button id="popLeft" title="Sposta a sinistra"><svg width="14" height="14" viewBox="0 0 12 12"><path d="M7.5 2L3.5 6l4 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <button id="popRight" title="Sposta a destra"><svg width="14" height="14" viewBox="0 0 12 12"><path d="M4.5 2l4 4-4 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button id="popLeft" title="Sposta a sinistra"><svg width="14" height="14" viewBox="0 0 12 12"><path d="M7.5 2L3.5 6l4 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <button id="popRight" title="Sposta a destra"><svg width="14" height="14" viewBox="0 0 12 12"><path d="M4.5 2l4 4-4 4" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
       </div>
       <button class="btn-del" id="popDel">Elimina punto</button>
       <button class="btn-save" id="popSave">Fatto</button>
@@ -301,7 +304,7 @@ header{
   <div class="drawer-card">
     <header>
       <b>Un algoritmo, scritto nel cielo</b>
-      <button class="x" id="drawerX"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+      <button class="x" id="drawerX"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="#fff" stroke-width="1.7" stroke-linecap="round"></path></svg></button>
     </header>
     <div class="drawer-body">
       <p style="font-size:14px;color:var(--ink-soft);line-height:1.55;margin-bottom:20px">Uno spettacolo di droni è un <b>algoritmo nel tempo</b>: una sequenza ordinata di fotogrammi. Ogni punto sulla linea del tempo descrive uno <b>stato</b> dello sciame (quanti droni, che forma, che colore, quale suono) e per quanto dura. Premi <b>Esegui</b>: i droni decollano e passano da un punto al successivo con transizioni fluide.</p>
@@ -330,7 +333,7 @@ const COLORS = {
   rosa:   {hex:'#ff7ec4'}
 };
 const NOTES = { Do:261.6, Re:293.7, Mi:329.6, Fa:349.2, Sol:392.0, La:440.0, Si:493.9, Accordo:0 };
-const FORME = ['cerchio','quadrato','cuore','freccia','linea','griglia','sciame'];
+const FORME = ['cerchio','quadrato','cuore','freccia','linea','griglia','sciame','sorriso','stella','lettera'];
 
 /* glifi SVG delle formazioni (per timeline e popup) */
 function glyph(forma,stroke){
@@ -342,7 +345,10 @@ function glyph(forma,stroke){
     freccia:`<path d="M3 12h14M12 6l6 6-6 6" fill="none" stroke="${s}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`,
     linea:`<path d="M4 12h16" stroke="${s}" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="12" r="1.6" fill="${s}"/><circle cx="12" cy="12" r="1.6" fill="${s}"/><circle cx="20" cy="12" r="1.6" fill="${s}"/>`,
     griglia:`<g fill="${s}"><circle cx="7" cy="7" r="1.6"/><circle cx="12" cy="7" r="1.6"/><circle cx="17" cy="7" r="1.6"/><circle cx="7" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="17" cy="12" r="1.6"/><circle cx="7" cy="17" r="1.6"/><circle cx="12" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></g>`,
-    sciame:`<g fill="${s}"><circle cx="7" cy="9" r="1.5"/><circle cx="13" cy="6" r="1.5"/><circle cx="18" cy="11" r="1.5"/><circle cx="9" cy="15" r="1.5"/><circle cx="15" cy="17" r="1.5"/><circle cx="12" cy="11" r="1.5"/></g>`
+    sciame:`<g fill="${s}"><circle cx="7" cy="9" r="1.5"/><circle cx="13" cy="6" r="1.5"/><circle cx="18" cy="11" r="1.5"/><circle cx="9" cy="15" r="1.5"/><circle cx="15" cy="17" r="1.5"/><circle cx="12" cy="11" r="1.5"/></g>`,
+    sorriso:`<circle cx="12" cy="12" r="8" fill="none" stroke="${s}" stroke-width="1.8"/><circle cx="9" cy="10" r="1.1" fill="${s}"/><circle cx="15" cy="10" r="1.1" fill="${s}"/><path d="M8.5 14c1 1.6 5.9 1.6 7 0" fill="none" stroke="${s}" stroke-width="1.6" stroke-linecap="round"/>`,
+    stella:`<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.5-.5z" fill="none" stroke="${s}" stroke-width="1.7" stroke-linejoin="round"/>`,
+    lettera:`<path d="M6 18V7.5a2.5 2.5 0 0 1 5 0V18M6 13h5" fill="none" stroke="${s}" stroke-width="1.8" stroke-linecap="round"/><path d="M14 18l3-9 3 9M14.8 15.5h4.4" fill="none" stroke="${s}" stroke-width="1.5" stroke-linecap="round"/>`
   };
   return `<svg viewBox="0 0 24 24">${G[forma]||G.sciame}</svg>`;
 }
@@ -352,7 +358,7 @@ function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
 
 /* ---------- modello: scena = sequenza di keyframe ---------- */
 function newKf(over){
-  return Object.assign({id:uid(), forma:'cerchio', droni:30, colore:'azzurro', blink:0, suono:'nessuno', durata:2}, over||{});
+  return Object.assign({id:uid(), forma:'cerchio', droni:30, colore:'azzurro', blink:0, suono:'nessuno', durata:2, lettera:'A'}, over||{});
 }
 let scene = [];
 // Evento 0: decollo. Accensione, ventole forti, salita a mezzo schermo, attesa.
@@ -369,7 +375,7 @@ function resize(){ const r=cv.getBoundingClientRect(); W=r.width; H=r.height; cv
 new ResizeObserver(resize).observe(cv);
 
 const TOTAL=60;
-const show={ active:0, color:COLORS.azzurro, forma:null, airborne:false, blinkUntil:0, t:0, lift:0, takeoffStart:-99999 };
+const show={ active:0, color:COLORS.azzurro, forma:null, letter:'A', airborne:false, blinkUntil:0, t:0, lift:0, takeoffStart:-99999 };
 
 let drones=[];
 function initDrones(){ drones=[]; for(let i=0;i<TOTAL;i++) drones.push({x:Math.random()*900,y:9999,fx:0,fy:0,on:false,bob:Math.random()*6.28, delay:Math.floor(i*1.0+Math.random()*12)}); }
@@ -379,8 +385,29 @@ let stars=[];
 function initStars(){ stars=[]; for(let i=0;i<110;i++) stars.push({x:Math.random(),y:Math.random()*0.82,r:Math.random()*1.1+0.3,tw:Math.random()*6.28}); }
 initStars();
 
-function genFormation(forma,k){
-  const pts=[]; if(k<=0) return pts;
+// rasterizza un carattere su canvas nascosto e campiona k punti (-1..1)
+function letterPoints(ch,k){
+  const S=72;
+  if(!letterPoints._oc){ const oc=document.createElement('canvas'); oc.width=S; oc.height=S; letterPoints._oc=oc; }
+  const oc=letterPoints._oc, o=oc.getContext('2d');
+  o.clearRect(0,0,S,S);
+  o.fillStyle='#fff'; o.textAlign='center'; o.textBaseline='middle';
+  o.font='700 60px "Space Grotesk", Arial, sans-serif';
+  o.fillText((ch||'A').toString().slice(0,1).toUpperCase(), S/2, S/2+2);
+  const d=o.getImageData(0,0,S,S).data;
+  const on=[]; let minx=S,maxx=0,miny=S,maxy=0;
+  for(let y=0;y<S;y++) for(let x=0;x<S;x++){ if(d[(y*S+x)*4+3]>120){ on.push(x+y*1000); if(x<minx)minx=x; if(x>maxx)maxx=x; if(y<miny)miny=y; if(y>maxy)maxy=y; } }
+  if(!on.length) return [];
+  const half=Math.max(1,Math.max(maxx-minx,maxy-miny))/2, ccx=(minx+maxx)/2, ccy=(miny+maxy)/2;
+  const pts=[];
+  for(let i=0;i<k;i++){ const v=on[Math.floor(i*on.length/k)]; const px=v%1000, py=Math.floor(v/1000); pts.push({nx:(px-ccx)/half, ny:(py-ccy)/half}); }
+  return pts;
+}
+
+function genFormation(forma,k,letter){
+  if(k<=0) return [];
+  if(forma==='lettera') return letterPoints(letter,k);
+  const pts=[];
   for(let i=0;i<k;i++){
     const t=i/k; let nx=0,ny=0;
     switch(forma){
@@ -397,6 +424,19 @@ function genFormation(forma,k){
         if(t<0.6){ nx=-1+(t/0.6)*1.55; ny=0; }
         else { const u=(t-0.6)/0.4, up=u<0.5, v=up?u*2:(u-0.5)*2; nx=0.55-v*0.55; ny=(up?-1:1)*v*0.7; }
         break; }
+      case 'stella':{
+        const V=10, f=t*V, e=Math.floor(f)%V, tt=f-Math.floor(f);
+        const a0=-Math.PI/2+e*Math.PI/5, r0=(e%2===0)?1:0.46;
+        const a1=-Math.PI/2+((e+1)%V)*Math.PI/5, r1=(((e+1)%2)===0)?1:0.46;
+        const x0=Math.cos(a0)*r0,y0=Math.sin(a0)*r0, x1=Math.cos(a1)*r1,y1=Math.sin(a1)*r1;
+        nx=x0+(x1-x0)*tt; ny=y0+(y1-y0)*tt; break; }
+      case 'sorriso':{
+        const faceN=Math.round(k*0.52), eyeN=Math.max(1,Math.round(k*0.07)), mouthStart=faceN+2*eyeN;
+        if(i<faceN){ const a=(i/faceN)*6.283; nx=Math.cos(a)*0.96; ny=Math.sin(a)*0.96; }
+        else if(i<faceN+eyeN){ const a=((i-faceN)/eyeN)*6.283; nx=-0.36+Math.cos(a)*0.1; ny=-0.34+Math.sin(a)*0.1; }
+        else if(i<mouthStart){ const a=((i-faceN-eyeN)/eyeN)*6.283; nx=0.36+Math.cos(a)*0.1; ny=-0.34+Math.sin(a)*0.1; }
+        else { const u=(i-mouthStart)/Math.max(1,k-mouthStart-1); const x=-0.5+u; nx=x; ny=0.2+0.34*(1-Math.pow(x/0.5,2)); }
+        break; }
       case 'attesa':{ nx=(k>1?-1+2*t:0)*0.92; ny=0.18 + ((i%2)?0.13:-0.07); break; }
       default:{ const a=Math.random()*6.283, rr=Math.sqrt(Math.random()); nx=Math.cos(a)*rr; ny=Math.sin(a)*rr; }
     }
@@ -407,7 +447,7 @@ function genFormation(forma,k){
 function setFormation(forma){
   show.forma=forma;
   const k=clamp(Math.round(show.active),0,TOTAL);
-  const pts=genFormation(forma,k);
+  const pts=genFormation(forma,k,show.letter);
   for(let i=0;i<TOTAL;i++){ const d=drones[i]; if(i<k){ d.on=true; d.fx=pts[i].nx; d.fy=pts[i].ny; } else d.on=false; }
 }
 function hexA(hex,a){ const n=parseInt(hex.slice(1),16); return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${a})`; }
@@ -470,27 +510,54 @@ let audio=null;
 function ensureAudio(){
   if(audio) return;
   const A=new (window.AudioContext||window.webkitAudioContext)();
-  // catena ventole: rumore -> bandpass -> lowpass -> gain
+
+  // uscita: lowpass (toglie durezza) -> highpass (toglie rimbombo) -> master
+  const master=A.createGain(); master.gain.value=0;
+  const lp=A.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=3200; lp.Q.value=0.6;
+  const hp=A.createBiquadFilter(); hp.type='highpass'; hp.frequency.value=95;
+  lp.connect(hp); hp.connect(master); master.connect(A.destination);
+
+  // 4 rotori = toni alla blade-pass frequency + armoniche, leggermente disaccordati (battimenti)
+  const BASE=208;                                   // ~ blade-pass frequency
+  const detunes=[1.0, 1.017, 0.991, 1.024];
+  const harm=[{m:1,g:0.5},{m:2,g:0.18}];
+  const oscs=[];
+  detunes.forEach((dt,r)=>{
+    const rg=A.createGain(); rg.gain.value=0.26; rg.connect(lp);
+    // shimmer: modulazione lenta d'ampiezza
+    const am=A.createOscillator(); am.type='sine'; am.frequency.value=0.18+0.11*r;
+    const amg=A.createGain(); amg.gain.value=0.07; am.connect(amg); amg.connect(rg.gain); am.start();
+    // wander: la frequenza oscilla di pochi cent (vita del suono)
+    const wob=A.createOscillator(); wob.type='sine'; wob.frequency.value=0.24+0.13*r;
+    const wobg=A.createGain(); wobg.gain.value=9; wob.connect(wobg); wob.start();
+    harm.forEach(h=>{
+      const o=A.createOscillator(); o.type='sine'; o.frequency.value=BASE*dt*h.m;
+      const g=A.createGain(); g.gain.value=h.g;
+      wobg.connect(o.detune);
+      o.connect(g); g.connect(rg); o.start();
+      oscs.push({o, base:BASE*dt*h.m});
+    });
+  });
+
+  // soffio aerodinamico (rumore filtrato, basso livello)
   const buf=A.createBuffer(1, A.sampleRate*2, A.sampleRate);
-  const data=buf.getChannelData(0);
-  for(let i=0;i<data.length;i++) data[i]=Math.random()*2-1;
-  const src=A.createBufferSource(); src.buffer=buf; src.loop=true;
-  const bp=A.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=190; bp.Q.value=0.8;
-  const lp=A.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=1100;
-  const fanGain=A.createGain(); fanGain.gain.value=0;
-  src.connect(bp); bp.connect(lp); lp.connect(fanGain); fanGain.connect(A.destination);
-  // flutter dei rotori
-  const lfo=A.createOscillator(); lfo.type='sawtooth'; lfo.frequency.value=26;
-  const lfoGain=A.createGain(); lfoGain.gain.value=0;
-  lfo.connect(lfoGain); lfoGain.connect(fanGain.gain);
-  src.start(); lfo.start();
-  audio={A, fanGain, lfoGain};
+  const dd=buf.getChannelData(0); for(let i=0;i<dd.length;i++) dd[i]=Math.random()*2-1;
+  const noise=A.createBufferSource(); noise.buffer=buf; noise.loop=true;
+  const nbp=A.createBiquadFilter(); nbp.type='bandpass'; nbp.frequency.value=BASE*1.6; nbp.Q.value=0.5;
+  const ng=A.createGain(); ng.gain.value=0; noise.connect(nbp); nbp.connect(ng); ng.connect(lp); noise.start();
+
+  audio={A, master, oscs, noiseGain:ng};
 }
 function fanLevel(L, tc){
   if(!audio) return;
-  const t=audio.A.currentTime, k=tc||0.22;
-  audio.fanGain.gain.setTargetAtTime(L, t, k);
-  audio.lfoGain.gain.setTargetAtTime(L*0.4, t, k);
+  const t=audio.A.currentTime, k=tc||0.25;
+  audio.master.gain.setTargetAtTime(L, t, k);
+  audio.noiseGain.gain.setTargetAtTime(L>0.01 ? 0.05*L+0.012 : 0, t, k);
+}
+function fanRpm(mult, tc){   // spin-up/down dei rotori (cambia il passo)
+  if(!audio) return;
+  const t=audio.A.currentTime, k=tc||0.6;
+  audio.oscs.forEach(x=>x.o.frequency.setTargetAtTime(x.base*mult, t, k));
 }
 function tone(freq){
   const A=audio.A, o=A.createOscillator(), g=A.createGain();
@@ -555,7 +622,7 @@ function renderTimeline(){
       : `background:${c};color:${inkOn(c)}`;
     let label;
     if(isT) label='decollo';
-    else { const snd=kf.suono!=='nessuno'?' '+ICO_NOTE:''; const bl=kf.blink>0?' '+ICO_BLINK+kf.blink:''; label=`${kf.forma}<br><b>${kf.droni}</b> droni${snd}${bl}`; }
+    else { const snd=kf.suono!=='nessuno'?' '+ICO_NOTE:''; const bl=kf.blink>0?' '+ICO_BLINK+kf.blink:''; const fnm=kf.forma==='lettera'?('lettera '+(kf.lettera||'A')):kf.forma; label=`${fnm}<br><b>${kf.droni}</b> droni${snd}${bl}`; }
     ev.innerHTML=`<div class="ev-dot" style="${dotStyle}">${j}</div><div class="ev-label">${label}</div>`;
     ev.onclick=()=>openPopup(j);
     track.appendChild(ev);
@@ -598,6 +665,7 @@ const fldDur=document.getElementById('fldDur');
 const valDroni=document.getElementById('valDroni');
 const valDur=document.getElementById('valDur');
 const takeoffNote=document.getElementById('takeoffNote');
+const fldLettera=document.getElementById('fldLettera');
 
 function curKf(){ return editTakeoff ? takeoff : scene[editIdx]; }
 
@@ -605,9 +673,17 @@ function curKf(){ return editTakeoff ? takeoff : scene[editIdx]; }
 FORME.forEach(f=>{
   const b=document.createElement('button'); b.className='forma-opt'; b.dataset.f=f;
   b.innerHTML=glyph(f,'#585d7e')+'<span>'+f+'</span>';
-  b.onclick=()=>{ curKf().forma=f; markForma(); preview(); };
+  b.onclick=()=>{ curKf().forma=f; markForma(); updateLetteraVis(); preview(); };
   fldForma.appendChild(b);
 });
+// chip carattere: A–Z e 0–9
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('').forEach(ch=>{
+  const b=document.createElement('button'); b.dataset.l=ch; b.textContent=ch;
+  b.onclick=()=>{ curKf().lettera=ch; markLettera(); preview(); };
+  fldLettera.appendChild(b);
+});
+function markLettera(){ const k=curKf(); fldLettera.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.l===(k.lettera||'A'))); }
+function updateLetteraVis(){ document.getElementById('fLettera').style.display = (!editTakeoff && curKf() && curKf().forma==='lettera') ? '' : 'none'; }
 Object.keys(COLORS).forEach(c=>{
   const b=document.createElement('button'); b.className='sw'; b.dataset.c=c; b.title=c;
   b.style.background=COLORS[c].hex;
@@ -635,10 +711,10 @@ fldDur.oninput=()=>{ const k=curKf(); k.durata=+fldDur.value; valDur.textContent
 function preview(){
   // anteprima dal vivo nel cielo (salita immediata, senza onda)
   const k=curKf(); if(!k) return;
-  show.active=k.droni; show.color=COLORS[k.colore]; show.takeoffStart=-99999; show.airborne=true;
+  show.active=k.droni; show.color=COLORS[k.colore]; show.letter=k.lettera||'A'; show.takeoffStart=-99999; show.airborne=true;
   setFormation(k.forma);
   if(k.blink>0) show.blinkUntil=show.t + k.blink*22;
-  ensureAudio(); audio.A.resume(); fanLevel(editTakeoff?0.5:0.22);
+  ensureAudio(); audio.A.resume(); fanLevel(editTakeoff?0.45:0.2); fanRpm(1.0,0.25);
   updateHud(k);
 }
 
@@ -659,8 +735,9 @@ function openPopup(j){
   fldDur.value=k.durata; valDur.textContent=k.durata.toFixed(1)+'s';
   if(!editTakeoff){
     fldDroni.value=k.droni; valDroni.textContent=k.droni;
-    markForma(); markColore(); markBlink(); markSuono();
+    markForma(); markColore(); markBlink(); markSuono(); markLettera();
   }
+  updateLetteraVis();
   document.getElementById('popDel').style.display = editTakeoff ? 'none' : '';
   document.querySelector('.move-grp').style.display = editTakeoff ? 'none' : '';
   document.getElementById('popLeft').disabled = editTakeoff || editIdx<=0;
@@ -718,11 +795,11 @@ async function play(){
   // EVENTO 0 — accensione, ventole forti, salita a mezzo schermo, attesa
   setStatus('evento 0 · decollo'); show.takeoffStart=show.t; show.airborne=true;
   show.active=takeoff.droni; show.color=COLORS[takeoff.colore]; setFormation('attesa'); updateHud(takeoff);
-  fanLevel(0); fanLevel(0.8, 0.45);              // ventole forti, in crescita
+  fanRpm(0.8,0.01); fanLevel(0); fanLevel(0.72, 0.45); fanRpm(1.0, 0.9);   // ventole forti, passo in salita
   movePlayhead(0);
   await wait((takeoff.durata*1000)/exec.speed);
   if(exec.cancelled) return finish();
-  fanLevel(0.33);
+  fanLevel(0.32); fanRpm(1.0, 0.5);
 
   // POSIZIONI 1..N
   for(let i=0;i<scene.length;i++){
@@ -737,13 +814,13 @@ async function play(){
   finish();
 }
 function applyKeyframe(kf){
-  show.active=kf.droni; show.color=COLORS[kf.colore];
+  show.active=kf.droni; show.color=COLORS[kf.colore]; show.letter=kf.lettera||'A';
   setFormation(kf.forma);
   if(kf.blink>0) show.blinkUntil=show.t + kf.blink*22;
   playNote(kf.suono);
   updateHud(kf);
 }
-async function land(){ setStatus('atterraggio…'); show.airborne=false; fanLevel(0.6); await wait(800/exec.speed); fanLevel(0); }
+async function land(){ setStatus('atterraggio…'); show.airborne=false; fanLevel(0.5); fanRpm(0.74,0.7); await wait(800/exec.speed); fanLevel(0); }
 function finish(){
   exec.playing=false; setTransport(false);
   if(exec.cancelled){ show.airborne=false; fanLevel(0); setStatus('— fermato —',true); }
@@ -763,7 +840,7 @@ function doStep(){
   if(stepIdx===0){
     show.takeoffStart=show.t; show.airborne=true;
     show.active=takeoff.droni; show.color=COLORS[takeoff.colore]; setFormation('attesa'); updateHud(takeoff);
-    fanLevel(0); fanLevel(0.6,0.45);
+    fanRpm(0.8,0.01); fanLevel(0); fanLevel(0.6,0.45); fanRpm(1.0,0.9);
     setStatus('evento 0 · decollo');
   } else {
     applyKeyframe(scene[stepIdx-1]);
@@ -841,5 +918,6 @@ resize();
 loadExample('Saluto');
 setStatus('— a terra —',true);
 </script>
-</body>
-</html>
+
+
+</body></html>
